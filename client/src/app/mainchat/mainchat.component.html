@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="username"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button (click)="toggleConnection()">{{text}}</button></td>
+    </tr>
+    <tr>
+      <td>Message:</td>
+      <td><input type="text" formControlName="message"/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button (click)="sendMessage()">Send</button></td>
+    </tr>
+  </table>
+</form>
+
+<table>
+    <tr>
+        <td><h1>Messages</h1></td>
+    </tr>
+    <tr *ngFor="let m of messages">
+        <td>
+            <code>{{ m.from }}    </code>
+            <span>{{ m.message }}</span>
+        </td>
+    </tr>
+</table>
+
